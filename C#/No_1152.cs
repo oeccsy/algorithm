@@ -6,6 +6,7 @@ namespace D_210225
     {
         static void Main(string[] args)
         {
+            /*
             int word = 1;
             string input = Console.ReadLine();
 
@@ -22,6 +23,19 @@ namespace D_210225
                 word -= 1;
 
             Console.WriteLine(word);
+            */
+
+            string[] input = Console.ReadLine().Split(' ');
+            int word = input.Length;
+
+            if (input[0] == "")
+                word--;
+            if (input[input.Length - 1] == "")
+                word--;
+
+            Console.Write(word);
+            
+            
         }
     }
 }
