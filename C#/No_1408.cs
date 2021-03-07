@@ -12,44 +12,24 @@ namespace D_210307
             int[] hhmmss = new int[3];
             int zero = 0;
 
-            /*
-            for (int i = 0; i < 3; i++)
-                hhmmss[i] = Convert.ToInt32(input2[i]);
-                */
-
             for (int i = 0; i < 3; i++)
             {
                 hhmmss[i] = Convert.ToInt32(input2[i]) - Convert.ToInt32(input1[i]);
 
-                if (i == 0 && hhmmss[i] < 0)
+                if (hhmmss[2] < 0)
                 {
-                    hhmmss[i] += 24;
-                }
-                    
-
-                if (i == 1 && hhmmss[i] < 0)
-                {
-                    hhmmss[i] += 60;
-                    hhmmss[i - 1] -= 1;
-
-                        if (hhmmss[i - 1] < 0)
-                            hhmmss[i - 1] += 24;      
+                    hhmmss[2] += 60;
+                    hhmmss[1] -= 1;
                 }
 
-                if (i == 2 && hhmmss[i] < 0)
+                if (hhmmss[1] < 0)
                 {
-                    hhmmss[i] += 60;
-                    hhmmss[i - 1] -= 1;
-
-                    if(hhmmss[i-1] <0)
-                    {
-                        hhmmss[i - 1] += 60;
-                        hhmmss[i - 2] -= 1;
-
-                        if (hhmmss[i - 2] < 0)
-                            hhmmss[i - 2] += 24;
-                    }
+                    hhmmss[1] += 60;
+                    hhmmss[0] -= 1;
                 }
+
+                if (hhmmss[0] < 0)
+                    hhmmss[0] += 24;
             }
 
             for(int i = 0; i<3; i++)
