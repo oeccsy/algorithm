@@ -8,24 +8,25 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int n,m;
-    int i,j,k;
-    array<int, 101> arr = {0, };
+    array<int, 42> remain = {0, };
+	int result = 0;
+	
+	for(int i=0; i<10; i++)
+	{
+		int input;
+		int remain_of_input;
+		cin >> input;
+		remain_of_input = input % 42;
 
-    cin >> n >> m;
+		remain[remain_of_input]++;
+	}
 
-    for(int iter=0; iter<m; iter++)
-    {
-        cin >> i >> j >> k;
+	for(int i=0; i<42; i++)
+	{
+		if(remain[i] != 0) result++;
+	}
 
-        for(int target=i; target<=j; target++)
-        {
-            arr[target] = k;
-        }
-    }
+	cout << result;
 
-    for(int iter = 1; iter<=n; iter++)
-    {
-        cout << arr[iter] << " ";
-    }
+   
 }
