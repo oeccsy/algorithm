@@ -39,7 +39,6 @@ int main()
             }
             else if(a.back().number < new_node.number)
             {
-                a.push_back(new_node);
                 break;
             }
             else if(a.back().number >= new_node.number)
@@ -48,10 +47,7 @@ int main()
             }
         }
 
-        if(a.empty())
-        {
-            a.push_back(new_node);
-        }
+        a.push_back(new_node);
 
         cout << a.front().number << " ";
     }
