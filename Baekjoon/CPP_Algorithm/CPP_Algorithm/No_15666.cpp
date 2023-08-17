@@ -24,6 +24,7 @@ void Count(int index)
     for(int i=0; i<n; i++)
     {
         if(selected[index] == nums[i]) continue;
+        if(index > 0 && selected[index-1] > nums[i]) continue;
         selected[index] = nums[i];
         Count(index+1);
     }
