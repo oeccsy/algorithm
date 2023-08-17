@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool clear[10000][10000];
+bool clear[5000][5000];
 
 void SetCenterEmpty(int start_row, int start_col, int n)
 {
@@ -37,7 +37,7 @@ int main()
 
     int n;
     cin >> n;
-    SetCenterEmpty(0, 0, n);
+    SetCenterEmpty(n/2, n, n);
 
     for(int i=0; i<n; i++)
     {
