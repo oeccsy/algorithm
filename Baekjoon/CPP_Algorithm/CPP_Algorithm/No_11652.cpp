@@ -3,7 +3,7 @@
 
 using namespace std;
 
-long long arr[100000];
+int arr[100000];
 int arr_count[100000];
 
 int main()
@@ -11,18 +11,18 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int n;
-    cin >> n;
+    int n, c;
+    cin >> n >> c;
     for (int i = 0; i < n; i++)
     {
-        long long input;
+        int input;
         cin >> input;
         arr[i] = input;
     }
 
     sort(arr, arr + n);
 
-    long long cur = 0;
+    int cur = 0;
     int cur_index = 0;
     int result_index = 0;
     
