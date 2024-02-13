@@ -44,11 +44,13 @@ int main()
     
     do
     {
-        int dist = t[k][path[0]];
-
-        for(int i=1; i<path.size(); i++)
+        int dist = 0;
+        
+        int st = k;
+        for(auto en : path)
         {
-            dist += t[path[i-1]][path[i]];
+            dist += t[st][en];
+            st = en;
         }
         
         answer = min(answer, dist);
