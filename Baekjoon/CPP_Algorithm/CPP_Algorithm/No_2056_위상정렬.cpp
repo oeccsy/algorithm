@@ -3,13 +3,7 @@
 
 using namespace std;
 
-struct Node
-{
-    int num;
-    int cost;
-};
-
-Node* nodes[10001];
+int costs[10001];
 
 int main()
 {
@@ -20,26 +14,18 @@ int main()
     cin >> n;
     for(int i=1; i<=n; i++)
     {
-        int cost_input, adj_size, adj_num;
-        
-        nodes[i] = new Node();
-        nodes[i]->num = i;
-        
-        cin >> cost_input;
-        nodes[i]->cost = cost_input;
+        int cost, adj_size, adj_num;
+        cin >> cost;
+        costs[i] = cost;
 
         cin >> adj_size;
         for(int j=0; j<adj_size; j++)
         {
             cin >> adj_num;
-
-            Node* u = nodes[i];
-            Node* v = nodes[adj_num];
-
-            u->cost = max(u->cost, cost_input + v->cost);
+            costs[i] = max(costs[i], cost + costs[adj_num]);
         }
 
-        if(answer < nodes[i]->cost) answer = nodes[i]->cost;
+        if(answer < costs[i]) answer = costs[i];
     }
 
     cout << answer;
