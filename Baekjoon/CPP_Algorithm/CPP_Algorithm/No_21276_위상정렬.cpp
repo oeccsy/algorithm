@@ -20,6 +20,16 @@ struct Node
 
 map<string, Node*> nodes;
 
+bool cmp(Node* a, Node* b)
+{
+    if(a->name != b->name)
+    {
+        return a->name < b->name;
+    }
+
+    return false;
+}
+
 int main()
 {
     ios::sync_with_stdio(false);
@@ -64,14 +74,15 @@ int main()
     }
 
     cout << k << '\n';
-
+    
     for(auto root_node : root_nodes)
     {
         cout << root_node->name << ' ';
     }
     cout << '\n';
-    
-    for(int i=0; i<n; i++) // Todo : 반복문 횟수 조정, break 고려
+
+    int visit_count = 0;
+    while(visit_count < n)
     {
         for(auto pair : nodes)
         {
@@ -80,12 +91,15 @@ int main()
             if(node->is_visit) continue;
 
             node->is_visit = true;
-
+            visit_count++;
+            
             for(auto adj_node : node->adj)
             {
                 if(adj_node->indegree == 1) node->children.push_back(adj_node);
                 adj_node->indegree--;
             }
+
+            sort(node->children.begin(), node->children.end(), cmp);
         }
     }
 
