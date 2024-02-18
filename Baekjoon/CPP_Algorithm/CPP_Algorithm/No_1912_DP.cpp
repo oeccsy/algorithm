@@ -4,6 +4,8 @@
 using namespace std;
 
 int d[100001];
+int num[100001];
+
 int main()
 {
     ios::sync_with_stdio(false);
@@ -14,21 +16,17 @@ int main()
 
     for(int i=1; i<=n; i++)
     {
-        cin >> d[i];
+        cin >> num[i];
     }
 
-    int max = 0;
-
-    for(int i=1; i<=n; i++)
+    int answer = num[1];
+    d[1] = num[1];
+    
+    for(int i=2; i<=n; i++)
     {
-        if(d[i] > max) max = d[i];
-        
-        for(int j=i+1; j<=n; j++)
-        {
-            d[i] = d[i]+d[j];
-            if(d[i] > max) max = d[i];
-        }
+        d[i] = max(num[i], d[i-1] + num[i]);
+        if(d[i] > answer) answer = d[i];
     }
 
-    cout << max;
+    cout << answer;
 }
