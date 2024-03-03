@@ -21,7 +21,7 @@ int main()
         {
             cin >> dist[i][j];
             real_dist[i][j] = INF;
-            if(i != j) adj[i][j] = true;
+            adj[i][j] = true;
         }
     }
 
@@ -46,7 +46,6 @@ int main()
         for(int j=1; j<=n; j++)
         {
             if(adj[i][j]) real_dist[i][j] = dist[i][j];
-            if(i==j) real_dist[i][j] = 0;
         }
     }
 
