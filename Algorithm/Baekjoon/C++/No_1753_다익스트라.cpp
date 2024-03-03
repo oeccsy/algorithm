@@ -1,16 +1,14 @@
 ﻿#include <iostream>
-#include <algorithm>
 #include <vector>
 #include <queue>
 
-using namespace std;
+const int INF =  0x3f3f3f3f;
 
-const int INF = 0x3f3f3f3f;
+using namespace std;
 
 struct Node
 {
-    int index;
-    int dist = INF;
+    int min_dist = INF;
     vector<pair<int, Node*>> adj;
 };
 
@@ -20,53 +18,57 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
+    
     int v, e, k;
     cin >> v >> e;
     cin >> k;
-
+    
     for(int i=1; i<=v; i++)
     {
         nodes[i] = new Node();
-        nodes[i]->index = i;
     }
-
+    
     for(int i=0; i<e; i++)
     {
-        int u, v, w;
-        cin >> u >> v >> w;
-        nodes[u]->adj.push_back({w,nodes[v]});
+        int input_u, input_v, input_w;
+        cin >> input_u >> input_v >> input_w;
+        
+        nodes[input_u]->adj.push_back({input_w, nodes[input_v]});
     }
-
-    priority_queue<pair<int, Node*>, vector<pair<int,Node*>>, greater<pair<int,Node*>>> pq;
-    nodes[k]->dist = 0;
-    pq.push({nodes[k]->dist, nodes[k]});
-
+    
+    priority_queue<pair<int, Node*>, vector<pair<int, Node*>>, greater<pair<int,Node*>>> pq;
+    nodes[k]->min_dist = 0;
+    pq.push({0, nodes[k]});
+    
     while(!pq.empty())
     {
-        auto cur = pq.top();
+        Node* cur_node = pq.top().second;
+        int cur_dist = pq.top().first;
         pq.pop();
-
-        if(cur.second->dist != cur.first) continue;
-
-        for(auto adj_info : cur.second->adj)
+        
+        if(cur_dist != cur_node->min_dist) continue;
+        
+        for(auto adj_info : cur_node->adj)
         {
-            if(adj_info.second->dist <= cur.second->dist + adj_info.first) continue;
-
-            adj_info.second->dist = cur.second->dist + adj_info.first;
-            pq.push({adj_info.second->dist, adj_info.second});
+            Node* dest_node = adj_info.second;
+            int weight = adj_info.first;
+            
+            if(cur_node->min_dist + weight >= dest_node->min_dist) continue;
+            
+            dest_node->min_dist = cur_node->min_dist + weight;
+            pq.push({dest_node->min_dist, dest_node});
         }
     }
     
     for(int i = 1; i <= v; i++)
     {
-        if(nodes[i]->dist == INF)
+        if(nodes[i]->min_dist == INF)
         {
             cout << "INF\n";
         }
         else
         {
-            cout << nodes[i]->dist << "\n";
+            cout << nodes[i]->min_dist << "\n";
         }
     }
 }
