@@ -1,9 +1,8 @@
 ﻿#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
-
-int d[10001];
-int coin[20];
 
 int main()
 {
@@ -13,33 +12,33 @@ int main()
     int t;
     cin >> t;
 
+    int n, m;
     for(int i=0; i<t; i++)
     {
-        int n, target;
         cin >> n;
+        int d[10005];
+        vector<int> coins;
 
         for(int j=0; j<n; j++)
         {
-            cin >> coin[j];
+            int coin_value;
+            cin >> coin_value;
+            coins.push_back(coin_value);
         }
+
+        cin >> m;
+        for(int j=0; j<=m; j++) d[j] = 0;
+        d[0] = 1;
         
-        cin >> target;
-
-        for(int j=0; j<n; j++)
+        for(auto coin_value : coins)
         {
-            d[coin[j]] += 1;
-
-            for(int k=coin[j]+1; k<=target; k++)
+            for(int j=1; j<=m; j++)
             {
-                d[k] += d[k-coin[j]];
+                if(coin_value > j) continue;
+                d[j] += d[j-coin_value];
             }
         }
 
-        cout << d[target] << '\n';
-
-        for(int k=1; k<=target; k++)
-        {
-            d[k] = 0;
-        }
+        cout << d[m] << '\n';
     }
 }
