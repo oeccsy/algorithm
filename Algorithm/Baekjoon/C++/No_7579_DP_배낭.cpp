@@ -43,31 +43,36 @@ int main()
 
   int ans = 10005;
 
-  for (int i = 0; i < n; i++)
+  for (int j = 0; j < 10005; j++)
+  {
+    if (j - apps[0]->cost >= 0)
+    {
+      d[0][j] = apps[0]->memory;
+    }
+
+    if (d[0][j] >= m)
+    {
+      ans = min(ans, j);
+    }
+  }
+
+  for (int i = 1; i < n; i++)
   {
     for (int j = 0; j < 10005; j++)
     {
-      if (i == 0)
+      if (j - apps[i]->cost >= 0)
       {
-        if (j - apps[i]->cost >= 0)
-        {
-          d[i][j] = apps[i]->memory;
-        }
+        d[i][j] = max(d[i - 1][j], d[i - 1][j - apps[i]->cost] + apps[i]->memory);
       }
       else
       {
-        if (j - apps[i]->cost >= 0)
-        {
-          d[i][j] = max(d[i - 1][j], d[i - 1][j - apps[i]->cost] + apps[i]->memory);
-        }
-        else
-        {
-          d[i][j] = d[i - 1][j];
-        }
+        d[i][j] = d[i - 1][j];
       }
 
       if (d[i][j] >= m)
+      {
         ans = min(ans, j);
+      }
     }
   }
 
