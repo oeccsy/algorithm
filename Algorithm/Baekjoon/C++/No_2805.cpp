@@ -8,7 +8,7 @@ vector<int> trees;
 
 bool is_possible(int h, int m)
 {
-    int sum = 0;
+    long long sum = 0;
 
     for(int tree : trees)
     {
