@@ -15,7 +15,58 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Algorithm.cpp">
+    <ClCompile Include="Leetcode\lowest-common-ancestor-of-a-binary-tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Leetcode\lowest-common-ancestor-of-a-binary-tree-2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Exhaustive Search\No_1436.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Greedy\No_2839_몫과나머지.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Basic\No_11866_연결리스트.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Basic\No_1966_큐.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Math\No_2108_통계.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Basic\No_11723_해시테이블.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Basic\No_1927_우선순위큐.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\BFS\No_14940_BFS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Two Pointers\No_5430_투포인터.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\DP\No_1932_DP_최대가되는경로.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\DP\No_9465_DP_초기값고려.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Prefix Sum\No_11660_2차원누적합.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\BFS\No_13549_BFS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Tree\No_1967_트리의지름.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Floyd Warshall\No_1865_가중치음수존재.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Tree\No_1167_트리의지름.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
