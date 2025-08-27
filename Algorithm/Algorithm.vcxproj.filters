@@ -69,7 +69,10 @@
     <ClCompile Include="Baekjoon\C++\Tree\No_1167_트리의지름.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Baekjoon\C++\Graph\No_16947_그래프_사이클찾기_위상정렬.cpp">
+    <ClCompile Include="Baekjoon\C++\Graph\No_16947_무방향그래프_사이클찾기_위상정렬.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Graph\No_9466_유방향그래프_사이클찾기_위상정렬.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

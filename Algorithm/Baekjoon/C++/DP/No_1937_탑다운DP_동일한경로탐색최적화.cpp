@@ -19,13 +19,13 @@ int max_move_count(int row, int col, int n)
 
 	int count = 1;
 
-	for (int i=0; i<4; ++i)
+	for (int i = 0; i < 4; ++i)
 	{
 		int next_row = row + dr[i];
 		int next_col = col + dc[i];
 
 		if (next_row < 0 || next_row >= n || next_col < 0 || next_col >= n) continue;
-		
+
 		if (forest[row][col] < forest[next_row][next_col])
 		{
 			count = max(count, max_move_count(next_row, next_col, n) + 1);
@@ -33,7 +33,7 @@ int max_move_count(int row, int col, int n)
 	}
 
 	d[row][col] = count;
-	
+
 	return count;
 }
 
