@@ -46,7 +46,7 @@ int main()
 		}
 
 		queue<Node*> search_targets;
-		
+
 		for (int i = 1; i <= n; ++i)
 		{
 			if (nodes[i]->indegree == 0) search_targets.push(nodes[i]);
@@ -58,7 +58,7 @@ int main()
 		{
 			Node* cur_node = search_targets.front();
 			search_targets.pop();
-			
+
 			++non_cycle_count;
 
 			for (auto adj_node : cur_node->adj)
