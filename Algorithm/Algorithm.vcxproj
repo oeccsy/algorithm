@@ -25,6 +25,7 @@
     <ClCompile Include="Baekjoon\C++\Basic\No_1966_큐.cpp" />
     <ClCompile Include="Baekjoon\C++\BFS\No_13549_BFS.cpp" />
     <ClCompile Include="Baekjoon\C++\BFS\No_14940_BFS.cpp" />
+    <ClCompile Include="Baekjoon\C++\DP\No_1106_DP_배낭문제_물건은하나씩담는과정.cpp" />
     <ClCompile Include="Baekjoon\C++\DP\No_1932_DP_최대가되는경로.cpp" />
     <ClCompile Include="Baekjoon\C++\DP\No_9465_DP_초기값고려.cpp" />
     <ClCompile Include="Baekjoon\C++\Exhaustive Search\No_1436.cpp" />

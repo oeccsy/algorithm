@@ -23,7 +23,7 @@ int main()
 	{
 		for (int j = 1; j <= str2.size(); ++j)
 		{
-			if (str1[i-1] == str2[j-1])
+			if (str1[i - 1] == str2[j - 1])
 			{
 				d[i][j] = (i - 1 < 0 || j - 1 < 0) ? 1 : d[i - 1][j - 1] + 1;
 			}
@@ -31,16 +31,16 @@ int main()
 			{
 				int prev_row = (j - 1 < 0) ? 0 : d[i - 1][j];
 				int prev_col = (i - 1 < 0) ? 0 : d[i][j - 1];
-				
+
 				d[i][j] = max(prev_row, prev_col);
 			}
 		}
 	}
 
 	int length = d[str1.size()][str2.size()];
-	
+
 	stack<char> path;
-	pair<int, int> cur = { str1.size(), str2.size()};
+	pair<int, int> cur = { str1.size(), str2.size() };
 
 	while (cur.first > 0 && cur.second > 0)
 	{
