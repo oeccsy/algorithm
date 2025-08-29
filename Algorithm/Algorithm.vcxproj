@@ -31,6 +31,7 @@
     <ClCompile Include="Baekjoon\C++\Exhaustive Search\No_1436.cpp" />
     <ClCompile Include="Baekjoon\C++\Floyd Warshall\No_1865_가중치음수존재.cpp" />
     <ClCompile Include="Baekjoon\C++\Graph\No_16947_무방향그래프_사이클찾기_위상정렬.cpp" />
+    <ClCompile Include="Baekjoon\C++\Graph\No_20040_무방향그래프_사이클찾기_UnionFind_간선추가마다검사.cpp" />
     <ClCompile Include="Baekjoon\C++\Graph\No_9466_유방향그래프_사이클찾기_위상정렬.cpp" />
     <ClCompile Include="Baekjoon\C++\Greedy\No_2839_몫과나머지.cpp" />
     <ClCompile Include="Baekjoon\C++\Math\No_2108_통계.cpp" />

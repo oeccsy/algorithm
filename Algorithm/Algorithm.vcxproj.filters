@@ -78,5 +78,8 @@
     <ClCompile Include="Baekjoon\C++\DP\No_1106_DP_배낭문제_물건은하나씩담는과정.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Graph\No_20040_무방향그래프_사이클찾기_UnionFind_간선추가마다검사.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

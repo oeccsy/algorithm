@@ -9,7 +9,7 @@ int cost(int prev, int next)
 	if (prev == next) return 1;
 	if (prev == 0) return 2;
 	if (prev % 2 == next % 2) return 4;
-	
+
 	return 3;
 }
 
@@ -43,13 +43,13 @@ int main()
 
 		if (input == 0) break;
 		++index;
-		
+
 		for (int i = 0; i <= 4; ++i)
 		{
 			for (int j = 0; j <= 4; ++j)
 			{
 				if (d[index - 1][i][j] >= 10000000) continue;
-		
+
 				d[index][input][j] = min(d[index][input][j], d[index - 1][i][j] + cost(i, input));
 				d[index][i][input] = min(d[index][i][input], d[index - 1][i][j] + cost(j, input));
 			}
@@ -67,6 +67,6 @@ int main()
 	}
 
 	cout << answer;
-	
+
 	return 0;
 }
