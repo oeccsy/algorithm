@@ -35,6 +35,7 @@
     <ClCompile Include="Baekjoon\C++\Graph\No_9466_유방향그래프_사이클찾기_위상정렬.cpp" />
     <ClCompile Include="Baekjoon\C++\Greedy\No_2839_몫과나머지.cpp" />
     <ClCompile Include="Baekjoon\C++\Math\No_17387_선분교차_외적_CCW.cpp" />
+    <ClCompile Include="Baekjoon\C++\Math\No_17387_선분교차_외적_CCW_2.cpp" />
     <ClCompile Include="Baekjoon\C++\Math\No_2108_통계.cpp" />
     <ClCompile Include="Baekjoon\C++\Prefix Sum\No_11660_2차원누적합.cpp" />
     <ClCompile Include="Baekjoon\C++\Simulation\No_12100_Simulation_2048_재귀.cpp" />

@@ -87,5 +87,8 @@
     <ClCompile Include="Baekjoon\C++\Math\No_17387_선분교차_외적_CCW.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Baekjoon\C++\Math\No_17387_선분교차_외적_CCW_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
