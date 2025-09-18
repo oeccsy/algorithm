@@ -29,18 +29,6 @@ int GetCCW(Vector p1, Vector p2, Vector p3)
 	}
 }
 
-bool Cmp(Vector& a, Vector& b)
-{
-	if (a.x != b.x)
-	{
-		return a.x < b.x;
-	}
-	else
-	{
-		return a.y < b.y;
-	}
-}
-
 int main()
 {
 	cin.tie(nullptr);
@@ -65,18 +53,27 @@ int main()
 	{
 		cout << 1;
 	}
-	else 	
+	else
 	{
-		if (Cmp(p2, p1)) swap(p1, p2);
-		if (Cmp(p4, p3)) swap(p3, p4);
+		Vector minL1 = { min(p1.x, p2.x), min(p1.y, p2.y) };
+		Vector maxL1 = { max(p1.x, p2.x), max(p1.y, p2.y) };
+		Vector minL2 = { min(p3.x, p4.x), min(p3.y, p4.y) };
+		Vector maxL2 = { max(p3.x, p4.x), max(p3.y, p4.y) };
 
-		if (Cmp(p2, p3) || Cmp(p4, p1))
+		bool isIntersects = true;
+
+		if (maxL1.x < minL2.x) isIntersects = false;
+		if (maxL1.y < minL2.y) isIntersects = false;
+		if (maxL2.x < minL1.x) isIntersects = false;
+		if (maxL2.y < minL1.y) isIntersects = false;
+
+		if (isIntersects)
 		{
-			cout << 0;
+			cout << 1;
 		}
 		else
 		{
-			cout << 1;
+			cout << 0;
 		}
 	}
 }
