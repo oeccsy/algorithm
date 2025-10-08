@@ -58,6 +58,18 @@ bool Compare(const Node& a, const Node& b)
 	}
 }
 
+bool ComparePointer(Node* a, Node* b)
+{
+	if (a->x != b->x)
+	{
+		return a->x < b->x;
+	}
+	else
+	{
+		return a->y > b->y;
+	}
+}
+
 void Print(Node* target, int size);
 
 void CustomSort(Node* target, int size)
@@ -78,6 +90,17 @@ void Print(Node* target, int size)
 	cout << '\n';
 }
 
+void Print(Node** target, int size)
+{
+	cout << "======== 1차원 배열 출력 ========" << '\n';
+	for (int i = 0; i < size; ++i)
+	{
+		cout << '(' << target[i]->x << ',' << target[i]->y << ") ";
+	}
+	cout << '\n';
+}
+
+
 // 배열 라이브러리
 bool operator==(const Node& a, const Node& b)
 {
@@ -86,10 +109,41 @@ bool operator==(const Node& a, const Node& b)
 
 bool Find(Node* arr, int size, Node target)
 {
-	auto it = find(arr, arr + size, target);
-	bool find = (it != arr + size);
+	Node* ptr = find(arr, arr + size, target);
+	bool find = (ptr != arr + size);
 
 	return find;
+}
+
+int FindMinInt(int* arr, int size)
+{
+	int* min = min_element(arr, arr + size);
+	return *min;
+}
+
+Node* FindMinNode(Node* nodes, int size)
+{
+	Node* min_node = min_element(nodes, nodes + size);
+	return min_node;
+}
+
+Node* FindMinNode(Node** nodes, int size)
+{
+	Print(nodes, size);
+
+	Node** min_node = min_element(nodes, nodes + size, ComparePointer);
+	cout << "min_node : " << (*min_node)->x << " " << (*min_node)->y << '\n';
+
+	return *min_node;
+}
+
+void ViewSwap(Node** nodes, int size)
+{
+	cout << "======== Swap 출력 ========" << '\n';
+
+	Print(nodes, size);
+	swap(nodes[0], nodes[size - 1]);
+	Print(nodes, size);
 }
 	
 // 이분탐색
@@ -197,4 +251,20 @@ int main()
 
 	ViewBinarySearchWithNode(nodes, 10, { 2, 2 });
 	ViewBinarySearchWithOperator(nodes, 10, { 2, 2 });
+
+	// =============================
+
+	Node* node_ptr_arr[10];
+	for (int i = 0; i < 10; ++i)
+	{
+		node_ptr_arr[i] = new Node();
+		node_ptr_arr[i]->x = 10 - i;
+		node_ptr_arr[i]->y = 2 * i;
+	}
+
+	Node* min_node = FindMinNode(node_ptr_arr, 10);
+
+	// =============================
+	
+	ViewSwap(node_ptr_arr, 10);
 }

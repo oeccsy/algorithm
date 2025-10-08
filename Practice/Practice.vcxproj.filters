@@ -24,5 +24,8 @@
     <ClCompile Include="Array\Array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="String\RabinKarp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

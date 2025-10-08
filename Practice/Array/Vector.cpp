@@ -70,6 +70,18 @@ bool Compare(const Node& a, const Node& b)
 	}
 }
 
+bool ComparePointer(Node* a, Node* b)
+{
+	if (a->x != b->x)
+	{
+		return a->x < b->x;
+	}
+	else
+	{
+		return a->y > b->y;
+	}
+}
+
 void Print(vector<Node>& target);
 void Print(vector<Node*> target);
 
@@ -108,6 +120,29 @@ bool Find(vector<int>& vec, int target)
 	bool find = (it != vec.end());
 
 	return find;
+}
+
+int FindMinInt(vector<int>& vec)
+{
+	auto it = min_element(vec.begin(), vec.end());
+	return *it;
+}
+
+Node FindMinNode(vector<Node>& vec)
+{
+	auto it = min_element(vec.begin(), vec.end());
+	return *it;
+}
+
+Node* FindMinNode(vector<Node*>& vec)
+{
+	Print(vec);
+
+	auto it = min_element(vec.begin(), vec.end(), ComparePointer);
+	Node* min_node = *it;
+	cout << "min_node : " << min_node->x << " " << min_node->y << '\n';
+
+	return min_node;
 }
 
 void ViewRemove()
@@ -247,4 +282,18 @@ int main()
 	ViewBinarySearch(vec4, 3);
 	ViewBinarySearchWithNode(vec3, { 2, 2 });
 	ViewBinarySearchWithOperator(vec3, { 3, 7 });
+
+	/// ========================
+	
+	vector<Node*> vec5;
+	vec5.push_back(new Node({ 5, 0 }));
+	vec5.push_back(new Node({ 1, 3 }));
+	vec5.push_back(new Node({ 2, 5 }));
+	vec5.push_back(new Node({ 2, 2 }));
+	vec5.push_back(new Node({ 1, 2 }));
+	vec5.push_back(new Node({ 4, 4 }));
+	vec5.push_back(new Node({ 3, 7 }));
+	vec5.push_back(new Node({ 4, 7 }));
+
+	FindMinNode(vec5);
 }
